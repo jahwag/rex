@@ -7,7 +7,7 @@ Rex aims to simplify the design of reactive applications in a novel way which do
 1. Add the following dependency to your pom.xml:
 ```xml
 <dependency>
-    <groupId>com.github.jahwag</groupId>
+    <groupId>com.github.jahwag.rex</groupId>
     <artifactId>rex</artifactId>
     <version>0.1.0-SNAPSHOT</version>
 </dependency>

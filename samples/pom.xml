@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
+        <groupId>com.github.jahwag.rex</groupId>
         <artifactId>rex-parent</artifactId>
-        <groupId>com.github.jahwag</groupId>
         <version>0.1.0-SNAPSHOT</version>
     </parent>
 
