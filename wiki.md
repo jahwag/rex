@@ -70,7 +70,7 @@ Mono<String> something = Mono.from(rex.single(command))
 
 
 ## Inspiration
-This library owes inspiration to a CRF lecture in 2018 given by @eduardsi.
+This library owes inspiration to a CRF lecture given in 2018 by [sizovs](https://github.com/sizovs).
 
 ## Related reading
  * [CommandOrientedInterface](https://martinfowler.com/bliki/CommandOrientedInterface.html)
