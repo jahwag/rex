@@ -3,7 +3,6 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <artifactId>rex-parent</artifactId>
         <groupId>com.github.jahwag</groupId>
@@ -12,6 +11,10 @@
 
     <artifactId>rex-reactor</artifactId>
     <name>Rex for Project Reactor</name>
+
+    <properties>
+        <reactor-core.version>3.3.1.RELEASE</reactor-core.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -23,13 +26,13 @@
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-core</artifactId>
-            <version>3.1.6.RELEASE</version>
+            <version>${reactor-core.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-test</artifactId>
-            <version>3.1.6.RELEASE</version>
+            <version>${reactor-core.version}</version>
             <scope>test</scope>
         </dependency>
 

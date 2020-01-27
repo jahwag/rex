@@ -9,7 +9,7 @@ Rex aims to simplify the design of reactive applications in a novel way which do
 <dependency>
     <groupId>com.github.jahwag</groupId>
     <artifactId>rex</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.0-SNAPSHOT</version>
 </dependency>
 ```
 
