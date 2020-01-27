@@ -1,10 +1,11 @@
 # Rex
-Rex facilitates the construction of command-oriented service layers for enterprise applications in Java.
+Rex facilitates the construction of reactive command-oriented service layers for enterprise applications in Java.
 
-Rex aims to simplify the design of reactive applications in a novel way which does not require message-passing.
+## Compatibility
+Rex is compatible with Java >= 1.8. It also works with GraalVM.
 
-## Using REX with Maven
-1. Add the following dependency to your pom.xml:
+## Using Rex with Maven
+1. Add the following dependency to your pom.xml*:
 ```xml
 <dependency>
     <groupId>com.github.jahwag.rex</groupId>
@@ -12,6 +13,9 @@ Rex aims to simplify the design of reactive applications in a novel way which do
     <version>0.1.0-SNAPSHOT</version>
 </dependency>
 ```
+
+* Rex is not yet available in Maven central i.e. you will have to install it on your own repository before use.
+
 
 ##### When using Spring
 
@@ -24,8 +28,8 @@ Rex aims to simplify the design of reactive applications in a novel way which do
 ##### When using Java EE / Weld / other compatible DI container
 In JEE7 and later CDI should be enabled by default. Earlier versions are not supported.
 
-## Using REX with other build tools
+## Using Rex with other build tools
 For Gradle or SBT see reference/plugin documentation on how to include Maven projects.
 
-## Credits
-This library owes most of its inspiration to [CRF](http://blog.sizovs.net/service-layer-design/) by @eduardsi.
+## Further reading
+[Rex wiki](./wiki.md)

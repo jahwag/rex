@@ -1,11 +1,7 @@
-## FAQ
+## Background
+Rex is latin for king, which seemed a fitting name for an object that gives commands. 
 
-##### What does Rex stand for?
-Choose your pick! 
-
-Rex is latin title for king, which seemed a fitting name for an object that gives commands. 
-
-It could also be thought of as a "Reactive EXecutor" or "Reactive Enterprise eXtensions", if you prefer.
+It could also be thought of as a "Reactive EXecutor" or "Reactive Enterprise eXtensions", whichever you prefer — the name is of lesser importance than the function.
 
 ## Getting started
 Instructions below are provided with CDI annotations to define and inject enterprise beans. 
@@ -72,6 +68,9 @@ Mono<String> something = Mono.from(rex.single(command))
 
 <sup>The Maven artifact "rex-reactor" provides ready-made wrappers for Project Reactor.</sup>
 
+
+## Inspiration
+This library owes inspiration to a CRF lecture in 2018 given by @eduardsi.
+
 ## Related reading
  * [CommandOrientedInterface](https://martinfowler.com/bliki/CommandOrientedInterface.html)
- * [How to design a service layer in Java using CRF](http://blog.sizovs.net/service-layer-design/)
