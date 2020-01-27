@@ -19,10 +19,13 @@ Rex is compatible with Java >= 1.8. It also works with GraalVM.
 
 ##### When using Spring
 
-2. To instruct Spring to scan for components inside a library's jar, you must annotate your application class with the package:
+2. To instruct Spring to scan for components inside rex jars, you may create a configuration as follows:
 
 ```java
-@ComponentScan(basePackages = "com.github.jahwag.rex")
+@ComponentScan("com.github.jahwag.rex")
+@Configuration
+public class RexConfiguration {
+}
 ```
 
 ##### When using Java EE / Weld / other compatible DI container
