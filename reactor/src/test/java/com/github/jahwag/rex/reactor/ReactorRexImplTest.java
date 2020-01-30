@@ -2,6 +2,7 @@ package com.github.jahwag.rex.reactor;
 
 import com.github.jahwag.rex.command.Command;
 import com.github.jahwag.rex.reaction.Reaction;
+import com.github.jahwag.rex.reactor.service.ReactorRex;
 import lombok.Builder;
 import lombok.Value;
 import lombok.experimental.Accessors;
@@ -21,8 +22,8 @@ public class ReactorRexImplTest {
     private final ReactorRex rex = ReactorRex.create();
 
     @Test
-    public void broadcast() {
-        rex.subscribe(new ListAccountsReaction(), ListAccounts.class);
+    public void publish() {
+        rex.register(new ListAccountsReaction(), ListAccounts.class);
 
         Flux<Account> results = rex.publish(ListAccounts.builder()
                                                         .minimumBalance(1000)

@@ -1,7 +1,7 @@
 package com.github.jahwag.rex.cdi.reaction;
 
-import com.github.jahwag.rex.annotations.AutoSubscribe;
 import com.github.jahwag.rex.cdi.command.Login;
+import com.github.jahwag.rex.reaction.AutoSubscribe;
 import com.github.jahwag.rex.reaction.Reaction;
 import reactor.core.publisher.Mono;
 

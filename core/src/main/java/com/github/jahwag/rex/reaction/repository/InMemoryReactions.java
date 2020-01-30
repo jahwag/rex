@@ -1,7 +1,8 @@
-package com.github.jahwag.rex.reaction;
+package com.github.jahwag.rex.reaction.repository;
 
-import com.github.jahwag.rex.annotations.AutoSubscribe;
 import com.github.jahwag.rex.command.Command;
+import com.github.jahwag.rex.reaction.AutoSubscribe;
+import com.github.jahwag.rex.reaction.Reaction;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,20 +10,20 @@ import java.util.Optional;
 
 public final class InMemoryReactions implements Reactions {
 
-    private final Map<Class<? extends Command>, Reaction> reactionMap;
+    private final Map<Class<? extends Command<?>>, Reaction<?, ?>> reactionMap;
 
     public InMemoryReactions() {
-        reactionMap = new HashMap<>();
+        this(new HashMap<>());
     }
 
-    public InMemoryReactions(Map<Class<? extends Command>, Reaction> reactionMap) {
+    public InMemoryReactions(Map<Class<? extends Command<?>>, Reaction<?, ?>> reactionMap) {
         this.reactionMap = reactionMap;
     }
 
-    public static InMemoryReactions of(Iterable<? extends Reaction> reactions) {
-        Map<Class<? extends Command>, Reaction> map = new HashMap<>();
+    public static InMemoryReactions of(Iterable<? extends Reaction<?, ?>> reactions) {
+        Map<Class<? extends Command<?>>, Reaction<?, ?>> map = new HashMap<>();
 
-        for (Reaction reaction : reactions) {
+        for (Reaction<?, ?> reaction : reactions) {
             Class<? extends Reaction> reactionClass = reaction.getClass();
             Optional<AutoSubscribe> autoSubscribe = Optional.ofNullable(reactionClass
                     .getAnnotation(AutoSubscribe.class));
@@ -37,9 +38,10 @@ public final class InMemoryReactions implements Reactions {
         reactionMap.put(commandClass, reaction);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public Reaction findBy(Command command) {
-        return reactionMap.getOrDefault(command.getClass(), Reaction.none());
+    public <T> Reaction<Command<T>, T> findBy(Command<T> command) {
+        return (Reaction<Command<T>, T>) reactionMap.getOrDefault(command.getClass(), Reaction.none());
     }
 
     @Override

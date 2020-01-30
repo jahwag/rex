@@ -1,9 +1,9 @@
 package com.github.jahwag.rex.cdi.reaction;
 
-import com.github.jahwag.rex.annotations.AutoSubscribe;
 import com.github.jahwag.rex.cdi.command.RevokeRole;
 import com.github.jahwag.rex.cdi.user.User;
 import com.github.jahwag.rex.cdi.user.Users;
+import com.github.jahwag.rex.reaction.AutoSubscribe;
 import com.github.jahwag.rex.reaction.Reaction;
 import org.reactivestreams.Publisher;
 import reactor.core.publisher.Mono;

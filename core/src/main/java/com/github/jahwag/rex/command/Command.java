@@ -1,6 +1,6 @@
 package com.github.jahwag.rex.command;
 
-import com.github.jahwag.rex.Rex;
+import com.github.jahwag.rex.service.Rex;
 import org.reactivestreams.Publisher;
 
 /**

@@ -1,6 +1,9 @@
-package com.github.jahwag.rex.reaction;
+package com.github.jahwag.rex.reaction.repository.cdi;
 
 import com.github.jahwag.rex.command.Command;
+import com.github.jahwag.rex.reaction.Reaction;
+import com.github.jahwag.rex.reaction.repository.InMemoryReactions;
+import com.github.jahwag.rex.reaction.repository.Reactions;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Any;
@@ -26,7 +29,7 @@ final class CDIReactions implements Reactions {
     }
 
     @Override
-    public Reaction findBy(Command<?> command) {
+    public <T> Reaction<Command<T>, T> findBy(Command<T> command) {
         return delegate.findBy(command);
     }
 

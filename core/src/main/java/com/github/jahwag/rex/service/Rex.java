@@ -1,11 +1,11 @@
-package com.github.jahwag.rex;
+package com.github.jahwag.rex.service;
 
 import com.github.jahwag.rex.command.Command;
 import com.github.jahwag.rex.reaction.Reaction;
 import org.reactivestreams.Publisher;
 
 /**
- * A service for publishing and subscribing to commands using reactive streams.
+ * A service for publishing commands using reactive streams.
  */
 public interface Rex {
 
@@ -19,21 +19,21 @@ public interface Rex {
     <R> Publisher<R> publish(Command<R> command);
 
     /**
-     * Subscribes reaction to the command class it observes. The reaction will be notified when instances of
+     * Registers reaction to the command class it observes. The reaction will be notified when instances of
      * the command type are published.
      *
      * @param reaction     reaction instance
-     * @param commandClass command class to subscribe to
+     * @param commandClass command class to register
      * @param <C>          command type
      */
-    <C extends Command<?>> void subscribe(Reaction<C, ?> reaction, Class<C> commandClass);
+    <C extends Command<?>> void register(Reaction<C, ?> reaction, Class<C> commandClass);
 
     /**
-     * Unsubscribe reaction to the command type it observes. The reaction will no longer be notified when instances of
+     * Unregisters reaction to the command type it observes. The reaction will no longer be notified when instances of
      * the command type are published.
      *
      * @param reaction reaction instance
      */
-    void unsubscribe(Reaction<?, ?> reaction);
+    void unregister(Reaction<?, ?> reaction);
 
 }

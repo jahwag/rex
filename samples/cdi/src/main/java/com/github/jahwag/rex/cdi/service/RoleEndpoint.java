@@ -1,7 +1,7 @@
 package com.github.jahwag.rex.cdi.service;
 
 import com.github.jahwag.rex.cdi.command.RevokeRole;
-import com.github.jahwag.rex.reactor.ReactorRex;
+import com.github.jahwag.rex.reactor.service.ReactorRex;
 
 import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;

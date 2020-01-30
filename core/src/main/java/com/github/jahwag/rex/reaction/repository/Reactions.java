@@ -1,6 +1,7 @@
-package com.github.jahwag.rex.reaction;
+package com.github.jahwag.rex.reaction.repository;
 
 import com.github.jahwag.rex.command.Command;
+import com.github.jahwag.rex.reaction.Reaction;
 
 /**
  * Repository for instances of {@link Reaction}.
@@ -8,7 +9,7 @@ import com.github.jahwag.rex.command.Command;
 public interface Reactions {
 
     /**
-     * Registers the specified {@link Reaction}.
+     * Subscribes to the specified {@link Reaction}.
      *
      * @param reaction     reaction to subscribe
      * @param commandClass command to subscribe to
@@ -22,7 +23,7 @@ public interface Reactions {
      * @param command command to use
      * @return {@link Reaction} found, or {@link Reaction#none()} otherwise
      */
-    Reaction findBy(Command<?> command);
+    <T> Reaction<Command<T>, T> findBy(Command<T> command);
 
     /**
      * Unregisters the specified {@link Reaction}.

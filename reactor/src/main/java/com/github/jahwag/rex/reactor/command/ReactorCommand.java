@@ -1,11 +1,11 @@
 package com.github.jahwag.rex.reactor.command;
 
-import com.github.jahwag.rex.Rex;
 import com.github.jahwag.rex.command.Command;
+import com.github.jahwag.rex.service.Rex;
 import reactor.core.publisher.Flux;
 
 /**
- * AutoSubscribe that uses Project Reactor 3.
+ * Command implementation for Reactor.
  *
  * @see Command
  */

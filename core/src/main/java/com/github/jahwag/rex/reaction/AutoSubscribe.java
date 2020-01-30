@@ -1,4 +1,4 @@
-package com.github.jahwag.rex.annotations;
+package com.github.jahwag.rex.reaction;
 
 import com.github.jahwag.rex.command.Command;
 

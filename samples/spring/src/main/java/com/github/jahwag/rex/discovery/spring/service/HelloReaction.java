@@ -1,6 +1,6 @@
 package com.github.jahwag.rex.discovery.spring.service;
 
-import com.github.jahwag.rex.annotations.AutoSubscribe;
+import com.github.jahwag.rex.reaction.AutoSubscribe;
 import com.github.jahwag.rex.reaction.Reaction;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;

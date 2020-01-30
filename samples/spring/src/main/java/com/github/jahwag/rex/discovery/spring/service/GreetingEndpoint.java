@@ -1,6 +1,6 @@
 package com.github.jahwag.rex.discovery.spring.service;
 
-import com.github.jahwag.rex.reactor.ReactorRex;
+import com.github.jahwag.rex.reactor.service.ReactorRex;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,7 +19,6 @@ public final class GreetingEndpoint {
 
     @RequestMapping(value = "/async", method = RequestMethod.GET)
     public CompletableFuture<String> async() {
-
         return new HelloCommand().publish(rex)
                                  .next()
                                  .toFuture();

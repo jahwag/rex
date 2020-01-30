@@ -1,15 +1,14 @@
-package com.github.jahwag.rex.reactor;
+package com.github.jahwag.rex.reactor.service;
 
-import com.github.jahwag.rex.Rex;
 import com.github.jahwag.rex.command.Command;
-import com.github.jahwag.rex.reaction.InMemoryReactions;
+import com.github.jahwag.rex.reaction.repository.InMemoryReactions;
+import com.github.jahwag.rex.service.Rex;
 import reactor.core.publisher.Flux;
 
 /**
- * A service for publishing and subscribing to commands using the reactive streams implementation Project Reactor 3 .
+ * Rex implementation for Reactor.
  *
  * @see Rex
- * @see <a href="https://projectreactor.io">Project Reactor</a>
  */
 public interface ReactorRex extends Rex {
 

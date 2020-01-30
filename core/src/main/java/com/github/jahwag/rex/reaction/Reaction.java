@@ -1,11 +1,8 @@
 package com.github.jahwag.rex.reaction;
 
 import com.github.jahwag.rex.command.Command;
-import com.github.jahwag.rex.exceptions.NoReactionFound;
 import org.reactivestreams.Publisher;
 
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 import java.util.function.Function;
 
 /**
@@ -16,23 +13,12 @@ import java.util.function.Function;
  */
 public interface Reaction<C extends Command<R>, R> extends Function<C, Publisher<R>> {
 
-    static Reaction none() {
+    static Reaction<Command<Void>, Void> none() {
         return None.INSTANCE;
     }
 
     @Override
     Publisher<R> apply(C command);
-
-    default Class<C> commandType() {
-        Type type = getClass().getGenericInterfaces()[0];
-
-        if (!(type instanceof ParameterizedType)) {
-            new IllegalArgumentException("No generic type parameter found");
-        }
-
-        ParameterizedType parameterizedType = (ParameterizedType) type;
-        return (Class<C>) parameterizedType.getActualTypeArguments()[0];
-    }
 
     /**
      * Null object.
