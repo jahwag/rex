@@ -22,6 +22,6 @@ public interface ReactorRex extends Rex {
     }
 
     @Override
-    <R> Flux<R> publish(Command<R> command);
+    <R> Flux<R> prepare(Command<R> command);
 
 }

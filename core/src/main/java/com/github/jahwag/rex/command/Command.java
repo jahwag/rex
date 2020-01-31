@@ -12,10 +12,10 @@ import org.reactivestreams.Publisher;
 public interface Command<R> {
 
     /**
-     * @see Rex#publish(Command)
+     * @see Rex#prepare(Command)
      */
     default Publisher<R> publish(Rex rex) {
         return rex
-                .publish(this);
+                .prepare(this);
     }
 }

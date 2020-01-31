@@ -25,7 +25,7 @@ public class ReactorRexImplTest {
     public void publish() {
         rex.register(new ListAccountsReaction(), ListAccounts.class);
 
-        Flux<Account> results = rex.publish(ListAccounts.builder()
+        Flux<Account> results = rex.prepare(ListAccounts.builder()
                                                         .minimumBalance(1000)
                                                         .build());
 

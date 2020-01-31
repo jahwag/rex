@@ -14,7 +14,7 @@ public interface ReactorCommand<R> extends Command<R> {
     @Override
     default Flux<R> publish(Rex rex) {
         return Flux.from(rex
-                .publish(this));
+                .prepare(this));
     }
 
 }

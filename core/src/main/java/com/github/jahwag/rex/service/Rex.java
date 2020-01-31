@@ -16,7 +16,7 @@ public interface Rex {
      * @param <R>     result type
      * @return Publisher of result
      */
-    <R> Publisher<R> publish(Command<R> command);
+    <R> Publisher<R> prepare(Command<R> command);
 
     /**
      * Registers reaction to the command class it observes. The reaction will be notified when instances of
